@@ -1,0 +1,413 @@
+:root {
+    /* Palette Colors */
+    --black: #09090B;
+    --white: #FFFFFF;
+    --green: #6EE7B7;
+    --violet: #C4B5FD;
+    --pink: #FDA4AF;
+    font-family: 'HelveticaNeueLTProThEx';
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTProThEx';
+    src: url('/src/font/HelveticaNeueLTProThEx.woff2') format('woff2'),
+         url('/src/font/HelveticaNeueLTProThEx.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Link Styles */
+a {
+    color: var(--black) !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    
+    /* Add these styles for better mobile responsiveness */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+@media (max-aspect-ratio: 16/9) {
+    /* Ensure video covers viewport height on narrow screens */
+    .video-background {
+        width: auto;
+        height: 100vh;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    /* Ensure video covers viewport width on wide screens */
+    .video-background {
+        width: 100vw;
+        height: auto;
+    }
+}
+
+/* Optional: prevent overflow issues on mobile */
+body {
+    overflow: hidden;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    max-width: 700px;
+    width: 70%;
+    margin: 10px auto 0;
+    margin-left: 10px;
+    text-align-last: left;
+    display: block;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+button, input {
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Typography Styles */
+.heading-1 {
+    font-size: 1.75rem !important;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.heading-2 {
+    font-size: 1.5rem !important;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.heading-3 {
+    font-size: 0.25rem !important;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.text-normal, .text-small, .text-smaller {
+    font-weight: 500;
+    color: var(--black);
+}
+
+.text-normal {
+    font-size: 1rem;
+}
+
+.text-small {
+    font-size: 0.875rem;
+}
+
+.text-smaller {
+    font-size: 0.75rem;
+}
+
+.paragraph {
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.bold-underline {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Title Container */
+.title-container {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 10;
+}
+
+/* Divider Line Style */
+.divider-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--black);
+    margin-top: 1rem;
+    display: none;
+}
+
+/* Right-aligned Title Style */
+.title-right {
+    font-size: 1.75rem;
+    color: var(--black);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+
+.hero .button {
+    transform: translate(2.375rem, -0.5rem);
+}
+
+.hero {
+    position: relative;
+}
+
+.sun-icon {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+    margin-left: 1px;
+}
+
+
+
+/* resume download */
+.underline-link {
+    text-decoration: underline;
+    color: var(--black); /* Optional: adjust to match your color palette */
+}
+
+/* Hover Styles for Images and GIFs */
+.hover-container {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-text {
+    cursor: pointer;
+    text-decoration: underline;
+    position: relative;
+    z-index: 1;
+}
+
+.hover-image,
+.hover-gif,
+.hover-gif-dept,
+.hover-image-brand {
+    opacity: 0;
+    transition: opacity 0.6s ease, visibility 0s 0.6s;
+    visibility: hidden;
+    position: absolute;
+    z-index: 100;
+}
+
+.hover-container:hover .hover-image,
+.hover-container:hover .hover-gif,
+.hover-container.hover-dept:hover .hover-gif-dept,
+.hover-container:hover .hover-image-brand {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s ease, visibility 0s;
+}
+
+.hover-image {
+    top: 900%;
+    right: -300px;
+    transform: translateY(10px);
+    width: 150px;
+    height: auto;
+}
+
+.hover-gif {
+    top: 500%;
+    left: 1000%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: auto;
+    border-radius: 15px;
+    object-fit: contain;
+}
+
+.hover-gif-dept {
+    top: -150px;
+    right: -850px;
+    width: 500px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.hover-image-brand {
+    height: auto;
+    border-radius: 8px;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 0s 1s;
+    z-index: 100;
+}
+
+/* Rolex Hover Image Style */
+.rolex-image {
+    top: 150%;
+    right: -1000%;
+    width: 500px;
+    height: auto;
+}
+
+
+.chanel-image {
+    width: 550px;
+    top: 150%;
+    left: 20%;
+}
+
+.koche-image {
+    width: 500px;
+    top: -600%;
+    right: -700%;
+}
+
+.etudes-image {
+    width: 500px;
+    top: 400%;
+    left: 70%;
+}
+
+.hover-container:hover .hover-image-brand {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0s;
+}
+
+/* Footer Email Link */
+.email-footer {
+    position: fixed;
+    bottom: 1rem;
+    left: 2rem;
+    z-index: 10;
+    width: 100%;
+    text-align: left;
+}
+
+.footer-email {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--black) !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-email:hover {
+    color: var(--black) !important;
+    text-decoration: underline;
+}
+
+/* Footer */
+.contact-footer {
+    margin-top: 12.5rem;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    :root {
+        font-size: 14px;
+    }
+
+    main {
+        margin: 10px;
+        padding: 1px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .title-container {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        margin: 10px;
+        padding: 1px;
+        align-items: flex-start;
+    }
+
+    .divider-line {
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin: 10px;
+    }
+
+    .email-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: 10px;
+        padding: 1px;
+        text-align: left;
+    }
+
+    .hero {
+        margin: 10px;
+        min-height: 70vh; /* Further reduce height for very small screens */
+        padding: 1px;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+
+}
+
+
+@media screen and (max-width: 568px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    :root {
+        font-size: 12px;
+    }
+
+    .heading-1 {
+        font-size: 1.25rem;
+    }
+
+    .heading-2 {
+        font-size: 1rem;
+    }
+
+    .heading-3 {
+        font-size: 1.125rem;
+    }
+}

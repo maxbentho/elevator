@@ -1,22 +1,83 @@
+---
+import '../styles/styles.css'
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    
+    <!-- Fonts and Icons -->
+    <link href="https://api.fontshare.com/v2/css?f[]=poppins@500,600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    
+      <!-- SEO Basics -->
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="generator" content={Astro.generator} />
+      
+      <!-- Title and Meta -->
+      <title>{title} | Creative Digital Product Manager</title>
+      <meta name="description" content="Creative Digital Product Manager specializing in Product design and innovation." />
+      <meta name="author" content="Maxime Bentho" />
+      <meta name="keywords" content="Product Manager, Digital Manager, Product Digital Manager, AI/ML, Product Strategy, Design, Digital Portfolio, Maxime Bentho" />
+  
+     <!-- Open Graph -->
+     <meta property="og:title" content="Maxime Bentho | Product Digital Manager Portfolio" />
+     <meta property="og:description" content="Portfolio of Maxime Bentho, Creative Digital Product Manager specializing in Product, Design and Innovation." />
+     <meta property="og:image" content="/logo-linkedin.png" />
+     <meta property="og:url" content="https://www.maxbentho.com" />
+     <meta property="og:type" content="website" />
+  
+      <!-- Schema Markup -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Maxime Bentho",
+        "jobTitle": "Product Digital Manager",
+        "url": "https://www.maxbentho.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/maxbentho/",
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "DEPT, Rolex, Chanel, Louis Vuitton, Etudes Studio, Koché}"
+        },
+      }
+      </script>
+  
+      <!-- Robots and Canonical -->
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://www.maxbentho.com" />
+  </head>
+  
+  </head>
+  
+  <body>
+
+  
+    <!-- Background video -->
+    <video class="video-background" autoplay muted loop playsinline>
+      <source src="/background.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    
+    <main>
+      <!-- This is where the page-specific content will be injected -->
+      <slot />
+    </main>
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
