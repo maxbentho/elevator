@@ -1,6 +1,7 @@
 ---
 import '../styles/styles.css'
 import Analytics from '@vercel/analytics/astro'
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 interface Props {
 	title: string;
@@ -67,6 +68,7 @@ const { title } = Astro.props;
       <!-- Robots and Canonical -->
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href="https://www.maxbentho.com" />
+      <SpeedInsights />
 	  <Analytics />
   </head>
   
